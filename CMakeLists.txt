@@ -6,8 +6,10 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 
+enable_testing()
+
 set(CMAKE_PREFIX_PATH "C:/Qt/5.15.2/mingw81_64")
-set(OpenCV_DIR "D:/work/openCV64/x64/mingw/lib")
+set(OpenCV_DIR "D:/work/openCV64")
 
 file(GLOB SigSlotFiles CONFIGURE_DEPENDS 01.defSigSlot/*.cpp 01.defSigSlot/*.h 01.defSigSlot/*.ui)
 
@@ -18,6 +20,8 @@ file(GLOB ImageFiles CONFIGURE_DEPENDS 03.openCVImage/*.cpp 03.openCVImage/*.h 0
 file(GLOB SignalFiles CONFIGURE_DEPENDS 04.threadBase/*.cpp 04.threadBase/*.h 04.threadBase/*.ui)
 
 file(GLOB NetWorkFiles CONFIGURE_DEPENDS 05.Network/*.cpp 05.Network/*.h 05.Network/*.ui)
+
+add_subdirectory(test)
 
 find_package(Qt5 COMPONENTS
         Core
